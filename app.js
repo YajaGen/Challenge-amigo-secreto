@@ -2,7 +2,7 @@ let amigos = [];
 
 function agregarAmigo() {
     // Capturar el valor del campo de entrada
-    let input = document.getElementById("nombreAmigo");
+    let input = document.getElementById("amigo");
     let nombre = input.value;
 
     // Validar la entrada
