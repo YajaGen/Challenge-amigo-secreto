@@ -1,21 +1,37 @@
 let amigos = [];
 
 function agregarAmigo() {
-    // Capturar el valor del campo de entrada
-    let input = document.getElementById("amigo");
+    let input = document.getElementById("amigo"); // Actualizamos el id aquí
     let nombre = input.value;
 
-    // Validar la entrada
     if (nombre.trim() === "") {
         alert("Por favor, inserte un nombre.");
         return;
     }
 
-    // Actualizar el array de amigos
     amigos.push(nombre);
-
-    // Limpiar el campo de entrada
     input.value = "";
-
-    console.log(amigos); // Para verificar que se ha agregado correctamente
+    mostrarAmigos();
+    console.log(amigos);
 }
+
+function mostrarAmigos() {
+    let lista = document.getElementById("listaAmigos");
+    lista.innerHTML = "";
+
+    for (let i = 0; i < amigos.length; i++) {
+        let li = document.createElement("li");
+        li.textContent = amigos[i];
+        lista.appendChild(li);
+    }
+}
+
+function sortearAmigo() {
+    let resultado = document.getElementById("resultado");
+
+    if (amigos.length === 0) {
+        resultado.innerHTML = "No hay amigos para sortear.";
+        return;
+    }
+
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
