@@ -35,3 +35,4 @@ function sortearAmigo() {
     }
 
     let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+}
